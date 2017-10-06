@@ -6,7 +6,7 @@ class Decrypt extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('header');
-		$this->load->view('start');
+		$this->load->view('decrypt');
 		$this->load->view('footer');
 	}
 }
