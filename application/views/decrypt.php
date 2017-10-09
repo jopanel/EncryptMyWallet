@@ -16,7 +16,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <input class="btn btn-lg btn-primary btn-block" id="decrypt-btn" type="submit" value="Decrypt" onClick="decryptWallet()">
             <input type="text" class="form-control success" style="display:none;" required id="decrypted-wallet"><br>
             <p class="lead">
-              EncryptMyWallet.com does not hold your keys for you. We cannot access accounts, recover keys, reset passwords, nor reverse transactions. Protect your keys & always check that you are on correct URL. <a href="<?=base_url()?>tos">You are responsible for your security.</a>
+              EncryptMyWallet.com does not hold your information for you. We cannot access accounts, recover keys, reset passwords, nor reverse transactions. Protect your keys & password. Always check that you are on correct URL. <a href="<?=base_url()?>tos">You are responsible for your security.</a>
             </p> 
           </div>
           <script>
