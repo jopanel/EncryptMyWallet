@@ -6,7 +6,7 @@ class Store extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('header');
-		$this->load->view('start');
+		$this->load->view('store/store');
 		$this->load->view('footer');
 	}
 }

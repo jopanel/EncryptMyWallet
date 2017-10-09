@@ -8,10 +8,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <input type="text" class="form-control" placeholder="Your Encrypted Wallet" required autofocus id="wallet-string"> 
             <input type="password" class="form-control" placeholder="Password" required id="password-string"> <br>
             <input class="btn btn-lg btn-primary btn-block" id="encrypt-btn" type="submit" value="Encrypt" onClick="encryptWallet()">
-            <input type="text" class="form-control success" style="display:none;" required id="encrypted-wallet"><br>
+            <input type="text" class="form-control success" style="display:none;" onClick="this.setSelectionRange(0, this.value.length)"  id="encrypted-wallet"><br>
             <p class="lead">
               EncryptMyWallet.com does not hold your information for you. We cannot access accounts, recover keys, reset passwords, nor reverse transactions. Protect your keys & password. Always check that you are on correct URL. <a href="<?=base_url()?>tos">You are responsible for your security.</a>
             </p> 
+            <br>
           </div>
           <script>
             function encryptWallet() {
