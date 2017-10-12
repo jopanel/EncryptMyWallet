@@ -13,6 +13,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <h1 class="cover-heading">Decrypt Your Wallet</h1>
             <input type="text" class="form-control" placeholder="Your Encrypted Wallet" required autofocus id="wallet-string"> 
             <input type="password" class="form-control" placeholder="Password" required id="password-string"> <br>
+            <p class="lead">
+              By decrypting your wallet you agree to our <a href="<?=base_url()?>tos">terms of service.</a>
+            </p>
             <input class="btn btn-lg btn-primary btn-block" id="decrypt-btn" type="submit" value="Decrypt" onClick="decryptWallet()">
             <input type="text" class="form-control success" style="display:none;" onClick="this.setSelectionRange(0, this.value.length)" id="decrypted-wallet"><br>
             <p class="lead">
