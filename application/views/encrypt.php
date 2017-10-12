@@ -9,6 +9,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
             <input type="password" class="form-control" placeholder="Password" required id="password-string"> <br>
             <p class="lead">
               By encrypting your wallet you agree to our <a href="<?=base_url()?>tos">terms of service.</a>
+            </p>
             <input class="btn btn-lg btn-primary btn-block" id="encrypt-btn" type="submit" value="Encrypt" onClick="encryptWallet()">
             <input type="text" class="form-control success" style="display:none;" onClick="this.setSelectionRange(0, this.value.length)"  id="encrypted-wallet"><br>
             <p class="lead">
