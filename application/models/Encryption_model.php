@@ -9,6 +9,7 @@ class Encryption_model extends CI_Model {
         }
 
         public function encryptWallet( $key, $plaintext, $meta = '' ) { 
+        	$originalkey = $key;
 			$key = hash_pbkdf2( 'sha256', $key, '', 10000, 0, true ); 
 			$meta = serialize($meta); 
 			$mac_key = hash_hmac( 'sha256', 'mac', $key, true );
@@ -20,6 +21,8 @@ class Encryption_model extends CI_Model {
 			$mac = hash_hmac( 'sha256', $temp, $mac_key, true );
 			$siv = substr( $mac, 0, 16 ); 
 			$enc = mcrypt_encrypt( 'rijndael-128', $enc_key, $plaintext, 'ctr', $siv );
+			$testKey = base64_encode( $siv . $nonce . $enc );
+			if ($this->decryptWallet($originalkey, $testKey) !== $plaintext) { return null; }
 			return base64_encode( $siv . $nonce . $enc );
 		}
 
