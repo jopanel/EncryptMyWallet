@@ -8,6 +8,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
               
               <p>Source code available <a href="https://github.com/jopanel/encryptmywallet">on GitHub</a>, by <a href="http://lenapo.com">Lenapo Solutions LLC</a>.</p>
+              <p>contact: support@encryptmywallet.com</p>
+              <p class="lead">donate BTC: 1Hm4BH5EQsPgFVMt6E5LRhPe7EuYp9zAkM<br>donate LSK: 4287319913737945577L</p>
 
             </div>
           </div>
