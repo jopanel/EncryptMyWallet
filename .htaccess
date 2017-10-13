@@ -9,6 +9,9 @@ RewriteBase /
 RewriteCond %{REQUEST_URI} ^system.*
 RewriteRule ^(.*)$ index.php?/$1 [L]
 
+RewriteCond %{HTTPS} off
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
 #When your application folder isn't in the system folder
 
 RewriteCond %{REQUEST_URI} ^application.*
@@ -26,3 +29,4 @@ RewriteRule ^(.*)$ index.php?/$1 [L]
 # Submitted by: ElliotHaughin   
 
 ErrorDocument 404 /index.php
+
