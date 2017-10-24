@@ -5,6 +5,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
           <div class="inner cover">
             <h1 class="cover-heading">Encrypt Your Wallet</h1>
+            <div id="error_message" class="alert alert-danger" role="alert" style="display: none;"></div>
             <input type="text" class="form-control" placeholder="Your Encrypted Wallet" required autofocus id="wallet-string"> 
             <input type="password" class="form-control" placeholder="Password" required id="password-string"> <br>
             <p class="lead">
@@ -29,9 +30,15 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                       dataType: 'json',
                       data: postData,
                       cache: false,
-                      success: function (jsonData) {  
-                        document.getElementById("encrypted-wallet").value = jsonData.encrypted;
-                        $("#encrypted-wallet").show();
+                      success: function (jsonData) {
+                        if (jsonData.success) {
+                            document.getElementById("encrypted-wallet").value = jsonData.encrypted;
+                            $("#encrypted-wallet").show();
+                        } else {
+                            document.getElementById("error_message").append(jsonData.error);
+                            $("#error_message").show();
+                        }
+
                       }
                   });
               } 
