@@ -6,19 +6,19 @@ class Api extends CI_Controller {
     protected function validatePassword($password)
     {
         if (strlen($password) < 8) {
-            throw new InvalidArgumentException('Your password needs to be at least 8 characters long');
+            throw new InvalidArgumentException('Your password needs to be at least 8 characters long. ');
         }
 
         if(!preg_match('/(?=.*?[a-z])(?=.*?[A-Z])/', $password)){
-            throw new InvalidArgumentException('You need at least one lowercase and uppercase letter');
+            throw new InvalidArgumentException('You need at least one lowercase and uppercase letter. ');
         }
 
         if(!preg_match('/(?=.*?[0-9])(?=.*?[!@#$%^&*])/', $password)){
-            throw new InvalidArgumentException('Your password must have at least 1 number and 1 special character (!@#$%^&*)');
+            throw new InvalidArgumentException('Your password must have at least 1 number and 1 special character (!@#$%^&*). ');
         }
 
         if (preg_match('/(?=(\d{4}))/', $password)) {
-            throw new InvalidArgumentException('Consecutive numbers are not allowed');
+            throw new InvalidArgumentException('Consecutive numbers are not allowed. ');
         }
     }
 
