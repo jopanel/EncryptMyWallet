@@ -37,6 +37,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                         } else {
                             document.getElementById("error_message").append(jsonData.error);
                             $("#error_message").show();
+                            $("#encrypt-btn").show();
+                            password = "";
                         }
 
                       }
